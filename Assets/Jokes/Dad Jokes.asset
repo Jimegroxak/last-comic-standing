@@ -12,4 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f9f92dcc44628445a203221f1fb4a0d, type: 3}
   m_Name: Dad Jokes
   m_EditorClassIdentifier: 
-  group: Dad Joke
+  jokeSetups:
+  - What do you call a fish with no eye?
+  - What did the plate say to the cup?
+  - How do ghosts stay in shape?
+  - The other day my son asked me, "Can I have a bookmark?"
+  jokePunchlines:
+  - A fsh!
+  - Hey, dinner's on me tonight!
+  - They exorcise!
+  - I burst into tears. He could never remember my name since the accident

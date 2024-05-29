@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f9f92dcc44628445a203221f1fb4a0d, type: 3}
+  m_Name: Observational Jokes
+  m_EditorClassIdentifier: 
+  jokeSetups:
+  - Sometimes I like to wear tanktops to show off my bear arms...
+  - Isn't it weird that planes are cheaper than trains?
+  - I'll never forget my baby's first words...
+  - Everyone's heard of a love triangle, but I was once in a love Mt. Rushmmore
+  jokePunchlines:
+  - PETA isn't really a fan
+  - Makes me feel like airlines are just winging it
+  - Googoo gaga
+  - I was in love with four people, but they didn't even know I existed

@@ -10,6 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f9f92dcc44628445a203221f1fb4a0d, type: 3}
-  m_Name: Potty Jokes
+  m_Name: Yo Mama Jokes
   m_EditorClassIdentifier: 
-  group: Potty Jokes
+  jokeSetups:
+  - Yo mama so stupid...
+  - Yo mama so hairy...
+  - Yo mama so fat..
+  - Yo mama so old...
+  jokePunchlines:
+  - She brought a big spoon to the Super Bowl
+  - You must've been born with rugburn
+  - She had her family gathering in the ocean
+  - She has Jesus' autograph in her bible
