@@ -22,3 +22,5 @@ MonoBehaviour:
   - Hey, dinner's on me tonight!
   - They exorcise!
   - I burst into tears. He could never remember my name since the accident
+  groupID: 1
+  jokeColor: {r: 0.072445706, g: 0.41509432, b: 0.082423374, a: 0.5019608}
