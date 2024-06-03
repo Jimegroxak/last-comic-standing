@@ -13,7 +13,7 @@ public class AudienceVisualSpawner : MonoBehaviour
     {
         foreach (AudienceGroupSO ag in Audience.Instance.GetAudienceGroupSOs())
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < PlayerStats.roundNumber; i++)
             {
                 int x = Random.Range(xBound[0], xBound[1]);
                 int y = Random.Range(yBound[0], yBound[1]);

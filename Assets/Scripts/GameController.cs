@@ -9,9 +9,11 @@ public class GameController : MonoBehaviour
 {
     public static GameController Instance { get; private set;}
 
-    [SerializeField] AudienceGroupSO[] audienceGroups = new AudienceGroupSO[3];
+    [SerializeField] AudienceGroupSO[] audienceGroups = new AudienceGroupSO[4];
     [SerializeField] Timer timer;
+    [SerializeField] GameOverScreen gameOverScreen;
     private string currentSceneName;
+    public bool isAlive = true;
 
     private void Awake() 
     {
@@ -46,14 +48,12 @@ public class GameController : MonoBehaviour
             
             do
             {
-                a = audienceGroups[UnityEngine.Random.Range(0, 3)];
+                a = audienceGroups[UnityEngine.Random.Range(0, audienceGroups.Length)];
             }    
             while (activeGroups.Contains(a));
 
             activeGroups[i] = a;
         }
-
-        
         
         Audience.Instance.SetAudienceGroupSOs(activeGroups);
     }
@@ -64,16 +64,29 @@ public class GameController : MonoBehaviour
         {
             if (a.GetEntertainmentValue() <= 0)
             {
-                SceneManager.LoadScene(currentSceneName);
+                JokeSystem.Instance.SetButtonState(false);
+                isAlive = false;
+                gameOverScreen.Setup();
             }
         }
     }
 
     private void Timer_OnTimerFinished(object sender, EventArgs e)
     {
-        Debug.Log("You win!");
+        StartNextRound();
+    }
+
+    public void RestartGame()
+    {
+        PlayerStats.roundNumber = 1;
+        PlayerStats.entertainmentDecaySpeed = 1f;
+        SceneManager.LoadScene(currentSceneName);
+    }
+
+    private void StartNextRound()
+    {
         PlayerStats.roundNumber += 1;
-        PlayerStats.entertainmentDecaySpeed *= 1.2f;
+        PlayerStats.entertainmentDecaySpeed *= 1.5f;
         SceneManager.LoadScene(currentSceneName);
     }
 }

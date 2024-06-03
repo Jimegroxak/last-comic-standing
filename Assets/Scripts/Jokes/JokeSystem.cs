@@ -56,8 +56,8 @@ public class JokeSystem : MonoBehaviour
         {
             punchline = jokeButtons[index].text;
             bool correct = jokeGroups[selectedGroup].IsMatchingParts(setup, punchline);
-            //Debug.Log("Current group " + jokeGroups[activeJokeGroups[index]]);
-            OnPunchlineSelected?.Invoke(this, new OnPunchlineSelectedEventArgs { correctJoke = correct, jokeGroupIndex = GetCurrentJokeGroupIndex(index)});
+            Debug.Log("Current group " + jokeGroups[selectedGroup]);
+            OnPunchlineSelected?.Invoke(this, new OnPunchlineSelectedEventArgs { correctJoke = correct, jokeGroupIndex = jokeGroups[selectedGroup].GetGroupID()});
             DisplaySetups();
         }
     }
@@ -77,7 +77,6 @@ public class JokeSystem : MonoBehaviour
     private void DisplayPunchlines(int index)
     {
         selectedGroup = activeJokeGroups[index];
-        Debug.Log(selectedGroup);
         string[] punchlines = new string[4];
         punchlines = jokeGroups[activeJokeGroups[index]].GetPunchlines();
         for (int i = 0; i < jokeButtons.Length; i++)
@@ -89,18 +88,12 @@ public class JokeSystem : MonoBehaviour
         state = 1;
     }
 
-    private void SetButtonState(bool state)
+    public void SetButtonState(bool state)
     {
         for (int i = 0; i < jokeButtons.Length; i++)
         {
-            Button button = jokeButtons[i].GetComponent<Button>();
+            Button button = jokeButtons[i].transform.parent.gameObject.GetComponent<Button>();
             button.interactable = state;
         }
-    }
-
-    //pass this index to audience script for processing by likes/dislikes tables
-    public int GetCurrentJokeGroupIndex(int index)
-    {
-        return jokeGroups[activeJokeGroups[index]].GetGroupID();
     }
 }

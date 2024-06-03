@@ -13,7 +13,7 @@ public class AudienceGroupSO : ScriptableObject
     [SerializeField] public int[] dislikes = new int[5];
 
     private float maxEntertainmentValue = 100f;
-    private float currentEntertainmentValue = 50f;
+    private float currentEntertainmentValue;
 
     public int GetGroupID()
     {
@@ -40,6 +40,6 @@ public class AudienceGroupSO : ScriptableObject
 
     public void ResetEntertainmentValue()
     {
-        currentEntertainmentValue = 50f;
+        currentEntertainmentValue = 10f;
     }
 }

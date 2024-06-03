@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    float roundTime = 3f;
+    float roundTime = 60f;
     private float timerValue;
 
     public event EventHandler OnTimerFinished;
@@ -25,6 +25,7 @@ public class Timer : MonoBehaviour
 
     void UpdateTimer()
     {
+        if (GameController.Instance.isAlive)
         timerValue -= Time.deltaTime;
         timerImage.fillAmount = timerValue / roundTime;
         if (timerValue <= 0)
